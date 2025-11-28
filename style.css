@@ -1,0 +1,56 @@
+:root {
+      --primary: #e63946;
+      --accent: #a8dadc;
+    }
+
+    body {
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .neon-hover {
+      transition: all 0.3s;
+    }
+
+    /* .neon-hover:hover {
+      text-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 40px var(--accent);
+    } */
+
+    .nav-link {
+      position: relative;
+      padding: 5px 10px;
+      transition: 0.3s;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      margin-top: 5px;
+      right: 0;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+    }
+
+    /* Neon glow for boxes */
+    .box-hover:hover {
+      box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 40px var(--accent);
+      transform: scale(1.05);
+    }
+
+
+
+
+/* Tailwind CSS is now handling all styling */
+/* Custom animations and additional styles if needed */
+@layer components {
+  .smooth-transition {
+    @apply transition-all duration-300;
+  }
+}
